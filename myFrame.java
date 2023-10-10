@@ -9,6 +9,8 @@ public class myFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel[] p1 = new JPanel[12];
 	private JPanel[] p2 = new JPanel[12];
+	private JLabel[] p1Pieces = new JLabel[12];
+	private JLabel[] p2Pieces = new JLabel[12];
 	private JPanel[] board = new JPanel[64];
 	private GridLayout boardLayout = new GridLayout(8, 8);
 
@@ -20,10 +22,14 @@ public class myFrame extends JFrame {
 		this.setLayout(this.boardLayout);
 		
 		for(int i = 0; i < 12; i++) {
+			this.p1Pieces[i] = new JLabel("" + i);
+			this.p2Pieces[i] = new JLabel("" + i);
 			this.p1[i] = new JPanel();
 			this.p2[i] = new JPanel();
 			this.p1[i].setBackground(Color.red);
 			this.p2[i].setBackground(Color.cyan);
+			this.p1[i].add(this.p1Pieces[i]);
+			this.p2[i].add(this.p2Pieces[i]);
 		}
 		
 		for(int i = 0; i < 64; i++) {
@@ -66,6 +72,8 @@ public class myFrame extends JFrame {
 			} else {
 				if((x % 2 == 0 && y % 2 == 0) || (x % 2 != 0 && y % 2 != 0)) {
 					this.board[bIndex].setBackground(Color.lightGray);
+				} else {
+					this.board[bIndex].setBackground(Color.gray);
 				}
 				this.add(this.board[bIndex], bY, bX);
 				bIndex++;
