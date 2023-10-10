@@ -12,6 +12,8 @@ public class CheckerDriver {
 		Player p2 = new Player();
 		p2.setPlayerNumber(2);
 		p2.setPieces();
+
+		myFrame frame = new myFrame(p1, p2);
 		
 		int playerTurn = 2;
 		int pieceChoice = 0;
@@ -495,6 +497,8 @@ public class CheckerDriver {
 					
 				}
 			}
+
+			frame.updateBoard(p1, p2);
 		
 			if(jump) {
 				System.out.println("Would you like to jump again? 1. Yes 2. No");
