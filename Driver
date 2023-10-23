@@ -1,0 +1,9 @@
+package checkers;
+
+public class Driver {
+	public static int setPiece = 0;
+	public static void main(String[] args) {
+		Player play = new Player();
+		myFrame frame = new myFrame();
+	}
+}
